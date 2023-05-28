@@ -1,0 +1,17 @@
+### General
+*.tmp
+
+
+### Ignore VS / compiler stuff
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+*.orig
+*.suo
+*.user
+*.vspscc
+*.vssscc
+.vs
+

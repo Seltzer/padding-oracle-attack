@@ -1,0 +1,3 @@
+* text=false
+.nuget export-ignore
+.gitignore export-ignore
