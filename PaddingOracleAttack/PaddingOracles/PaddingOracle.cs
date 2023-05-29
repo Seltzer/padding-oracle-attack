@@ -4,17 +4,20 @@ using System.Linq;
 namespace PaddingOracleAttack.PaddingOracles
 {
 
+    /// <summary>
+    /// Is capable of telling the caller whether their specified ciphertext has valid padding
+    /// </summary>
     public abstract class PaddingOracle
     {
 
         int numDecryptionInvocations;
 
 
-        public bool IsPaddingValid(byte[] cipherBytes)
+        public bool IsPaddingValid(byte[] ciphertextBytes)
         {
             ++numDecryptionInvocations;
 
-            return IsPaddingValidImpl(cipherBytes);
+            return IsPaddingValidImpl(ciphertextBytes);
         }
 
 

@@ -18,14 +18,20 @@ namespace PaddingOracleAttack
             var cipherBytes = DemandAndEncryptPlaintext(crypto);
 
             // Choose a padding oracle
-            var oracle = new DirectExecutionErrorOracle(crypto);
-            //var oracle = new DirectExecutionTimingOracle(crypto);
+            var oracle = InstantiateOracle(crypto);
 
             // Fun time
-            new Haxor(oracle).DecryptCipherBytes(cipherBytes);
+            new Decryptor(oracle).DecryptCiphertext(cipherBytes);
 
             // Print results
             OutputResultsAndWait(oracle);
+        }
+
+
+        static PaddingOracle InstantiateOracle(CryptoWrapper crypto)
+        {
+            return new DirectExecutionErrorOracle(crypto);
+            //return new DirectExecutionTimingOracle(crypto);
         }
 
 
@@ -47,8 +53,8 @@ namespace PaddingOracleAttack
             // Apply default if null/empty
             if (string.IsNullOrEmpty(plaintext))
             {
-                plaintext = "In cryptography, a padding oracle attack is an attack which uses the padding validation of a cryptographic "
-                    + "message to decrypt the ciphertext.";
+                //plaintext = "In cryptography, a padding oracle attack is an attack which uses the padding validation of a cryptographic "
+                    //+ "message to decrypt the ciphertext.";
 
                 plaintext = "Cats and dogs and birds and hogs and prawns and frogs.";
 

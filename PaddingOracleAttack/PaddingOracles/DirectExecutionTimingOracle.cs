@@ -5,6 +5,9 @@ using System.Linq;
 namespace PaddingOracleAttack.PaddingOracles
 {
 
+    /// <summary>
+    /// Uses an arbitrary timing threshold which probably only works on my machine!
+    /// </summary>
     class DirectExecutionTimingOracle : PaddingOracle
     {
 
