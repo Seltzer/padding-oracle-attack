@@ -4,7 +4,7 @@ Playing around with padding oracle attacks in .NET.
 
 More information here: https://learn.microsoft.com/en-us/dotnet/standard/security/vulnerabilities-cbc-mode
 
-![image description](Screenshots/Screenshot 2023-05-29 143244.png)
+![image description](Screenshots/Screenshot%202023-05-29%20143244.png)
 
 ## Algorithm
 
