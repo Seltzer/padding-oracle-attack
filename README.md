@@ -8,11 +8,11 @@ More information here: https://learn.microsoft.com/en-us/dotnet/standard/securit
 
 ## Algorithm
 
-The algorithm was written based on this wiki page: https://en.wikipedia.org/wiki/Padding_oracle_attack. It remains unchanged regardless of which
+The algorithm was written based on this wiki page: https://en.wikipedia.org/wiki/Padding_oracle_attack. It works the same regardless of which
 oracle is used. It resides in Decryptor.cs and is documented there.
 
-The algorithm definitely isn't optimised. It could definitely be tweaked to attempt more probable byte values first based on the ASCII character
-range which would then require fewer guesses.
+The algorithm isn't at all optimised and could definitely be tweaked to prioritise more probable byte values based on the ASCII character
+range, resulting in fewer guesses being required.
 
 There's also a bug where it doesn't handle the case where we yield what we think is a padding of 1
 (e.g. P'2[K] = 1) but it's actually 2 (e.g. P'2 = ______________22) or 3 (e.g. P'2 = _____________333) etc.
